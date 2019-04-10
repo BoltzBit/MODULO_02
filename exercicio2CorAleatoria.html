@@ -15,6 +15,19 @@
         const btnElement = document.querySelector('.btn')
         const squareElement = document.querySelector('.box')
 
+        
+        function getRandomColor(){
+            let letters = '0123456789ABCDEF'
+            let color = '#'
+
+            for(let i=0;i<6;i++){
+                //escolhendo aleatoriamente um indice do vetor letters
+                color += letters[Math.floor(Math.random()*16)]
+            }
+
+            return color
+        }
+
         btnElement.onclick = function criar(){
             const boxElement = document.createElement('div')
 
@@ -22,8 +35,14 @@
             boxElement.style.height = '100px'
             boxElement.style.backgroundColor = '#f00'
 
+            squareElement.onmouseover = function(){
+                boxElement.style.backgroundColor = getRandomColor()
+            }
+
             squareElement.appendChild(boxElement)
         }
+
+
     </script>
 </body>
 </html>

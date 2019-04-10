@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="nome">
+    <button onclick="adicionar()">Adicionar</button>
+    <ul>
+
+    </ul>
+    <script>
+        const nomes = ['Diego','Gabriel','Lucas']
+        const listElements = document.querySelector('ul')
+        const inputElement = document.querySelector('input')
+
+        //percorrer o array com for..of
+        //for(nome of nomes){
+        //    const liElements = document.createElement('li')
+        //    const textElements = document.createTextNode(nome)
+
+        //    liElements.appendChild(textElements)
+        //    listElements.appendChild(liElements)
+        //}
+
+        //const addName = document.querySelector('input[name=nome]')
+
+        //function adicionar(){
+        //    const text = addName.value
+        //    const liElements = document.createElement('li')
+        //    const textElements = document.createTextNode(text)
+
+        //    liElements.appendChild(textElements)
+        //    listElements.appendChild(liElements)       
+        //}
+        
+        //forma alternativa
+
+        function addItem(text){
+            const liElements = document.createElement('li')
+            const textElements = document.createTextNode(text)
+
+            liElements.appendChild(textElements)
+            listElements.appendChild(liElements)
+        }
+
+        function adicionar(){
+            addItem(inputElement.value)
+            inputElement.value=''
+        }
+
+
+
+        for(nome of nomes){
+            addItem(nome)
+        }
+        
+    </script>
+</body>
+</html>
